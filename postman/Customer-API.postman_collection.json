@@ -1,0 +1,104 @@
+{
+  "info": {
+    "name": "Customer API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/customers",
+          "host": ["{{baseUrl}}"],
+          "path": ["customers"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"cpf\": \"12345678901\",\n    \"addresses\": [\n        {\n            \"street\": \"Main Street\",\n            \"number\": \"123\",\n            \"complement\": \"Apt 4B\",\n            \"neighborhood\": \"Downtown\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"zipCode\": \"10001\"\n        }\n    ]\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Customers",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/customers",
+          "host": ["{{baseUrl}}"],
+          "path": ["customers"]
+        }
+      }
+    },
+    {
+      "name": "Get Customer by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/customers/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["customers", "1"]
+        }
+      }
+    },
+    {
+      "name": "Update Customer",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/customers/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["customers", "1"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"John Updated\",\n    \"email\": \"john.updated@example.com\",\n    \"cpf\": \"12345678901\",\n    \"addresses\": [\n        {\n            \"street\": \"New Street\",\n            \"number\": \"456\",\n            \"complement\": \"Suite 7C\",\n            \"neighborhood\": \"Uptown\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"zipCode\": \"10002\"\n        }\n    ]\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete Customer",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseUrl}}/customers/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["customers", "1"]
+        }
+      }
+    },
+    {
+      "name": "Invalid Customer Creation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/customers",
+          "host": ["{{baseUrl}}"],
+          "path": ["customers"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"\",\n    \"email\": \"invalid-email\",\n    \"cpf\": \"123\",\n    \"addresses\": []\n}"
+        }
+      }
+    }
+  ]
+}
