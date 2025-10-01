@@ -1,0 +1,49 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.settings/
+.project
+.classpath
+
+# Maven
+target/
+!target/*.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# Logs
+logs/
+*.log
+
+# Test files
+**/test/
+**/tests/
+**/testdata/
+
+# Documentation
+README.md
+CHANGELOG.md
+docs/
+
+# Docker
+Dockerfile
+.dockerignore
+
+# H2 database files
+*.db
+*.mv.db
+*.trace.db
+
+# Environment files
+.env*
+*.env

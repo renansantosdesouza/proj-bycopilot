@@ -5,6 +5,101 @@
   },
   "item": [
     {
+      "name": "Modules",
+      "item": [
+        {
+          "name": "Create Module",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/modules",
+              "host": ["{{baseUrl}}"],
+              "path": ["modules"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Introduction to Java\",\n    \"description\": \"Basic Java concepts\",\n    \"orderNumber\": 1,\n    \"courseId\": 1,\n    \"lessons\": []\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Course Modules",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/modules/course/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["modules", "course", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Module",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/modules/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["modules", "1"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Updated Module\",\n    \"description\": \"Updated description\",\n    \"orderNumber\": 1,\n    \"courseId\": 1,\n    \"lessons\": []\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lessons Progress",
+      "item": [
+        {
+          "name": "Mark Lesson as Watched",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/lessons/progress",
+              "host": ["{{baseUrl}}"],
+              "path": ["lessons", "progress"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"studentId\": 1,\n    \"lessonId\": 1,\n    \"completed\": true,\n    \"notes\": \"Great lesson!\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Student Course Progress",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/lessons/progress/student/1/course/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["lessons", "progress", "student", "1", "course", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
       "name": "Create Customer",
       "request": {
         "method": "POST",
